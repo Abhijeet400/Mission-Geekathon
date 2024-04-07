@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['tution', 'housing', ''],
+          ['jan',  ,      400],
+          ['feb',  1170,      460],
+          ['mar',  660,       1120],
+          ['april',  1030,      540]
+        ]);
+
+        var options = {
+          title: 'Company Performance',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <h2 style="display: flex; justify-content: center; font-size: 36px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Graph of your expense</h2>
+    <div id="curve_chart" style="width: 900px; height: 500px"></div>
+    <a href="index2.html"><button style="background-color: #007bff;
+        color: #fff;
+        margin: 30px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer; margin-top: 10px;">Next</button></a>
+  </body>
+</html>
